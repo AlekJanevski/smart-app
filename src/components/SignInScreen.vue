@@ -12,11 +12,11 @@
       <!-- Bottom buttons section starts -->
       <div class="flex flex-col items-center justify-center w-full">
         <!-- Create an account button -->
-        <button class="w-full px-4 py-3 font-bold text-white transition-all border-2 border-transparent rounded-lg bg-red font-ubuntu hover:border-red hover:bg-transparent hover:text-red max-w-btn"> Create an account! </button>
+        <button class="w-full px-4 py-3 font-bold text-white transition-all border-2 border-transparent rounded-lg bg-red font-ubuntu hover:border-red hover:bg-transparent hover:text-red max-w-btn focus:outline-none"> Create an account! </button>
         <!-- OR separator -->
         <span class="relative block my-4 text-xs font-normal text-center separator text-dark-gray font-ubuntu max-w-btn"> OR </span>
         <!-- Sign in button -->
-        <router-link to="/home" tag="button" class="w-full px-4 py-3 font-bold text-white transition-all border-2 border-transparent rounded-lg max-w-btn bg-dark-gray font-ubuntu hover:border-dark-gray hover:bg-transparent hover:text-dark-gray">Sign In</router-link>
+        <router-link to="/home" tag="button" class="w-full px-4 py-3 font-bold text-white transition-all border-2 border-transparent rounded-lg max-w-btn bg-dark-gray font-ubuntu hover:border-dark-gray hover:bg-transparent hover:text-dark-gray focus:outline-none"> Sign In </router-link>
         <!-- Label -->
         <span class="block text-xs text-center mt-11 font-ubuntu font-regular text-medium-gray">
           Far far away, behind the word mountains, far from
