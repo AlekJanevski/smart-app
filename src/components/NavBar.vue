@@ -2,14 +2,14 @@
   <div>
     <nav class="absolute bottom-0 left-0 right-0 navbar navbar-toggleable-md navbar-light bg-faded">
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav flex items-center justify-between">
-          <li class="nav-item inline-block">
+        <ul class="flex items-center justify-between navbar-nav">
+          <li class="inline-block nav-item">
             <router-link to="/" class="nav-link">Sign In</router-link>
           </li>
-          <li class="nav-item inline-block">
+          <li class="inline-block nav-item">
             <router-link to="/home" class="nav-link">Home</router-link>
           </li>
-          <li class="nav-item inline-block">
+          <li class="inline-block nav-item">
             <router-link to="/user" class="nav-link">User</router-link>
           </li>
         </ul>

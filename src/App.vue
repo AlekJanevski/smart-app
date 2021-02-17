@@ -1,14 +1,14 @@
 <template>
-  <div id="app">
-    <!-- Bottom navigation bar -->
-    <nav-bar />
-    <!-- / Bottom navigation bar -->
+  <div id="app" class="w-full h-full">
+    <!-- Bottom navigation bar starts -->
+    <nav-bar v-if="this.$route.name !== 'sign-in'"/>
+    <!-- Bottom navigation bar ends -->
 
-    <!-- Router view section -->
+    <!-- Router view section starts -->
     <transition name="fade" mode="out-in">
       <router-view></router-view>
     </transition>
-    <!-- / Router view section -->
+    <!-- Router view section ends -->
   </div>
 </template>
 
@@ -26,6 +26,12 @@ export default {
 </script>
 
 <style>
+  /* Global style */
+  html,
+  body {
+    height: 100%;
+  }
+
   /* Transition style for routing through the components */
   .fade-enter-active, .fade-leave-active {
     transition: opacity .5s;

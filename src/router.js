@@ -10,9 +10,21 @@ const router = new VueRouter({
   mode: 'history',
   base: __dirname,
   routes: [
-    { path: '/', component: SignInScreen },
-    { path: '/home', component: HomeScreen },
-    { path: '/user', component: UserScreen }
+    { 
+      path: '/',
+      name: 'sign-in',
+      component: SignInScreen
+    },
+    { 
+      path: '/home',
+      name: 'home',
+      component: HomeScreen
+    },
+    { 
+      path: '/user',
+      name: 'user',
+      component: UserScreen 
+    }
   ]
 });
 
