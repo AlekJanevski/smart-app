@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="w-full h-full">
+  <div id="app" class="w-full h-full bg-light-gray">
     <!-- Bottom navigation bar starts -->
     <nav-bar v-if="this.$route.name !== 'sign-in'"/>
     <!-- Bottom navigation bar ends -->

@@ -1,6 +1,6 @@
 <template>
   <!-- Template main wrapper starts -->
-  <div class="w-full h-full bg-light-gray">
+  <div class="w-full h-full">
     <!-- Content wrapper starts -->
     <div class="flex flex-col items-start justify-between w-full h-full px-12 py-9">
       <!-- Logo wrapper starts -->
@@ -18,7 +18,7 @@
         <!-- Sign in button -->
         <router-link to="/home" tag="button" class="w-full px-4 py-3 font-bold text-white transition-all border-2 border-transparent rounded-lg max-w-btn bg-dark-gray font-ubuntu hover:border-dark-gray hover:bg-transparent hover:text-dark-gray focus:outline-none"> Sign In </router-link>
         <!-- Label -->
-        <span class="block text-xs text-center mt-11 font-ubuntu font-regular text-medium-gray">
+        <span class="block text-xs font-normal text-center mt-11 font-ubuntu text-medium-gray">
           Far far away, behind the word mountains, far from
           the countries Vokalia and Consonantia
         </span>
