@@ -2,7 +2,7 @@
   <div>
     <!-- Slider template main wrapper starts -->
     <div class="relative flex flex-col items-center justify-center w-full">
-      <!-- Slider line starts -->
+      <!-- Slider circle starts -->
       <round-slider 
         v-model="sliderValue"
         circleShape="pie"
@@ -18,17 +18,25 @@
         width="3"
         showTooltip="false"
       />
-      <!-- Slider line ends -->
+      <!-- Slider circle ends -->
+    
+      <!-- Outer circle wrapper starts -->
+      <div class="absolute w-48 h-48 bg-white rounded-full shadow-lg"></div>
+      <!-- Outer circle wrapper ends -->
 
-      <div class="absolute m-auto text-3xl font-normal text-center font-ubuntu text-dark-gray"> 
-        <span class="inline-block temp-icon"></span>
-        <span> {{ this.sliderValue }} &deg;C </span>
-        <!-- <span> current {{ currentTemp }} &deg;C </span> -->
+      <!-- Inner circle wrapper starts -->
+      <div class="absolute flex flex-col items-center justify-center w-40 h-40 m-auto text-3xl font-normal text-center rounded-full shadow-lg inner-circle font-ubuntu text-dark-gray"> 
+        <div class="flex items-center justify-center"> 
+          <span class="inline-block temp-icon mr-2.5"></span>
+          <span> {{ this.sliderValue }} &deg;C  </span>
+        </div>
+        <span class="relative text-sm font-normal uppercase top-1 font-ubuntu text-medium-gray"> current {{ currentTemp }} &deg;C </span>
       </div>
+      <!-- Inner circle wrapper ends -->
     </div>
+    <!-- Slider template main wrapper ends -->
     <button @click="increase" class=""> Increase </button>
     <button @click="decrease"> Decrease </button>
-    <!-- Slider template main wrapper ends -->
   </div>
 </template>
 
@@ -45,7 +53,7 @@ export default {
     data () {
       return {
         sliderValue: 25,
-        currentTemp: 22.5
+        currentTemp: 22
       }
   },
 
@@ -86,4 +94,10 @@ export default {
     background-repeat: no-repeat;
   }
   /* Icons for the templerature ends */
+
+  /* Style for the inner circle of the slider starts */
+  .inner-circle {
+    background: linear-gradient(148.24deg, #F7F7F7 27.8%, #FBFBFB 82.39%);
+  }
+  /* Style for the inner circle of the slider ends */
 </style>
