@@ -12,7 +12,8 @@ module.exports = {
         'lighter-gray': '#A8A8A8',
         'light-gray': '#F7F7F9',
         'medium-gray': '#A4A8AB',
-        'dark-gray': '#535353'
+        'dark-gray': '#535353',
+        'action-icon-gray': '#E5E7EB'
       },
       maxWidth: {
         'btn': '15rem',
@@ -20,7 +21,10 @@ module.exports = {
       },
       minWidth: {
         'det-box': '130px'
-       }
+      },
+      backgroundSize: {
+        '1': '1rem'
+      }
     },
   },
   variants: {
