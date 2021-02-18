@@ -21,22 +21,11 @@
     <div class="w-full px-4 mt-10">
       <span class="block mb-2 text-sm font-bold font-ubuntu text-gray">Details</span>
       <div class="w-full pb-4 overflow-x-auto details-wrapper">
-        <details-box
-          box-title="pm 2.5"
-          :box-data="16.1"
-          box-data-percentage="11%"
-        />
-
-        <details-box
-          box-title="humidity"
-          :box-data="74"
-          box-data-percentage="65%"
-        />
-
-        <details-box
-          box-title="weather"
-          :box-data="12"
-          box-data-percentage="°C"
+        <details-box v-for="box in detailsBox"
+          :key="box.id"
+          :box-title="box.title"
+          :box-data="box.data"
+          :box-data-percentage="box.percentage"
         />
       </div>
     </div>
@@ -60,7 +49,27 @@ export default {
 
   data() {
     return {
-      'houseTitle': 'My Big House'
+      houseTitle: 'My Big House',
+      detailsBox: [
+        { 
+          id: 1,
+          title: 'pm 2.5',
+          data: 16.1,
+          percentage: '11%'
+        },
+        { 
+          id: 2,
+          title: 'humidity',
+          data: 74,
+          percentage: '65%'
+        },
+        { 
+          id: 3,
+          title: 'weather',
+          data: 16.1,
+          percentage: '°C'
+        }
+      ]
     }
   }
 }
