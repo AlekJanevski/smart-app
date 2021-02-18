@@ -8,6 +8,8 @@ module.exports = {
       },
       colors: {
         'red': '#FF244C',
+        'gray': '#797979',
+        'lighter-gray': '#A8A8A8',
         'light-gray': '#F7F7F9',
         'medium-gray': '#A4A8AB',
         'dark-gray': '#535353'
@@ -15,7 +17,10 @@ module.exports = {
       maxWidth: {
         'btn': '15rem',
         'inc-dec-btns': '8.125rem'
-      }
+      },
+      minWidth: {
+        'det-box': '130px'
+       }
     },
   },
   variants: {
