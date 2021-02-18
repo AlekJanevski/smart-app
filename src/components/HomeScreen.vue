@@ -8,8 +8,15 @@
       <!-- Screen title ends -->
 
       <!-- Temperature slider starts -->
-      <temp-slider />
+      <temp-slider 
+        :tempValue="25"
+        :currentTemp="22"
+      />
       <!-- Temperature slider ends -->
+
+      <!-- Details wrapper starts -->
+      
+      <!-- Details wrapper ends -->
     </div>
     <!-- Screen title and slider wrapper ends -->
   </div>
