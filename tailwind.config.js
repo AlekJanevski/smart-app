@@ -13,7 +13,8 @@ module.exports = {
         'dark-gray': '#535353'
       },
       maxWidth: {
-        'btn': '15rem'
+        'btn': '15rem',
+        'inc-dec-btns': '8.125rem'
       }
     },
   },

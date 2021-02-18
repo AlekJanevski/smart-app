@@ -35,8 +35,21 @@
       <!-- Inner circle wrapper ends -->
     </div>
     <!-- Slider template main wrapper ends -->
-    <button @click="increase" class=""> Increase </button>
-    <button @click="decrease"> Decrease </button>
+
+    <!-- Buttons wrapper starts -->
+    <div class="flex items-center justify-between w-full m-auto max-w-inc-dec-btns">
+      <button 
+        @click="decrease"
+        :class="{'opacity-50 pointer-events-none' : this.disabledDecBtn }"
+        class="relative w-5 h-5 appearance-none btn-decrease focus:outline-none"
+      ></button>
+      <button 
+        @click="increase"
+        :class="{'opacity-50 pointer-events-none' : this.disabledIncBtn }"
+        class="relative w-5 h-5 apperance-none btn-increase focus:outline-none"
+      ></button>
+    </div>
+    <!-- Buttons wrapper ends -->
   </div>
 </template>
 
@@ -53,19 +66,29 @@ export default {
     data () {
       return {
         sliderValue: 25,
-        currentTemp: 22
+        currentTemp: 22,
+        disabledDecBtn: false,
+        disabledIncBtn: false,
       }
   },
 
   methods: {
     decrease () {
-      this.sliderValue--
+      if (this.sliderValue === 15) {
+        this.disabledDecBtn = true
+        } else {
+        this.disabledDecBtn = false
+        this.disabledIncBtn = false
+        this.sliderValue--
+      }
     },
 
     increase () {
       if (this.sliderValue === 25) {
-        alert('you cannot increase the temperature more than 25℃')
+        this.disabledIncBtn = true
       } else {
+        this.disabledDecBtn = false
+        this.disabledIncBtn = false
         this.sliderValue++
       }
     }
@@ -81,6 +104,9 @@ export default {
   }
   .rs-tooltip {
     color: #535353;
+  }
+  .rs-control {
+    height: 220px !important;
   }
   /* Additional style for the slider ends */
 
@@ -100,4 +126,19 @@ export default {
     background: linear-gradient(148.24deg, #F7F7F7 27.8%, #FBFBFB 82.39%);
   }
   /* Style for the inner circle of the slider ends */
+
+  /* Style for the increase/decrease buttons starts */
+  .btn-decrease {
+    background-image: url('../assets/icon-decrease.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  .btn-increase {
+    background-image: url('../assets/icon-increase.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  /* Style for the increase/decrease buttons ends */
 </style>
