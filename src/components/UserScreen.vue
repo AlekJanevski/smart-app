@@ -26,8 +26,8 @@
         <!-- Type of role wrapper starts -->
         <div class="w-full mt-9">
           <span class="block mb-2 text-xs font-bold uppercase font-ubuntu text-red">type of role</span>
-          <select name="role" id="role-type" class="w-full py-4 text-base font-normal bg-transparent border-t-2 border-b-2 border-light-gray-border font-ubuntu text-dark-gray">
-            <option value="user">User</option>
+          <select name="role" id="role-type" class="w-full py-4 text-base font-normal capitalize bg-transparent border-t-2 border-b-2 border-light-gray-border font-ubuntu text-dark-gray focus:outline-none">
+            <option v-for="role in roles" :key="role.id" :value="role.name"> {{ role.name }} </option>
           </select>
         </div>
         <!-- Type of role wrapper ends -->
@@ -40,12 +40,12 @@
             <span class="absolute right-0 inline-block m-auto text-sm font-normal capitalize top-1 font-ubuntu text-gray">edit</span>
           </div>
           <!-- Lights option -->
-          <select name="category" id="category-type" class="w-full py-4 text-base font-normal bg-transparent border-t-2 border-light-gray-border font-ubuntu text-dark-gray">
-            <option value="user">All lights</option>
+          <select name="category" id="category-type" class="w-full py-4 text-base font-normal bg-transparent border-t-2 border-light-gray-border font-ubuntu text-dark-gray focus:outline-none">
+            <option v-for="cat in categoryLights" :key="cat.id" :value="cat.name"> {{ cat.name }} </option>
           </select>
           <!-- Doors option -->
-          <select name="category1" id="category1-type" class="w-full py-4 text-base font-normal bg-transparent border-t-2 border-light-gray-border font-ubuntu text-dark-gray">
-            <option value="user">Front doors</option>
+          <select name="category1" id="category1-type" class="w-full py-4 text-base font-normal bg-transparent border-t-2 border-light-gray-border font-ubuntu text-dark-gray focus:outline-none">
+            <option v-for="cat in categoryDoors" :key="cat.id" :value="cat.name"> {{ cat.name }} </option>
           </select>
           <!-- Add new category -->
           <div class="flex items-center justify-start w-full py-4 text-base font-normal bg-transparent border-t-2 border-b-2 border-light-gray-border font-ubuntu text-dark-gray">
@@ -74,7 +74,37 @@ export default {
       profileName: 'barbara',
       profileEmail: 'barbara.smith@gmail.com',
       avatarName: 'avatar',
-      publicPath: process.env.BASE_URL
+      publicPath: process.env.BASE_URL,
+      roles: [
+        {
+          id: 1,
+          name: 'user'
+        },
+        {
+          id: 2,
+          name: 'admin'
+        }
+      ],
+      categoryLights: [
+        {
+          id: 1,
+          name: 'All lights'
+        },
+        {
+          id: 2,
+          name: 'Kitchen lights'
+        }
+      ],
+      categoryDoors: [
+        {
+          id: 1,
+          name: 'Front doors'
+        },
+        {
+          id: 2,
+          name: 'Back doors'
+        }
+      ]
     }
   }
 }
