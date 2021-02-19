@@ -147,6 +147,7 @@ export default {
 <style>
   /* Additional style for the slider starts */
   .rs-handle {
+    background-color: #ffffff !important;
     border: 2px solid red;
     box-shadow: none !important;
   }
