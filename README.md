@@ -40,3 +40,7 @@ Tech stack used for this project: VueJS, TailwindCSS, vue-round-slider and vue-r
 4. Navbar.vue
 - A shared component with functional Home and User buttons (first and last) which redirects to the corresponding screens.
 - Has an active class called 'active' which changes the color of the icon and adds a bottom border.
+
+5. UserScreen.vue
+- The avatar picture can be added dinamically with the user's name (however, the image should be stored with the same name in order to be found, the extension can be changed).
+- The back link and the 'Delete user' btn redirects to the home screen as requested.
