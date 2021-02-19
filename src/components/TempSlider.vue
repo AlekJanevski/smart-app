@@ -163,10 +163,10 @@ export default {
 
   /* Style for the increase/decrease buttons starts */
   .btn-decrease {
-    background-image: url('../assets/icon-decrease.svg');
+    background-image: url('../assets/icon-minus-sign.svg');
   }
   .btn-increase {
-    background-image: url('../assets/icon-increase.svg');
+    background-image: url('../assets/icon-plus-sign.svg');
   }
   /* Style for the increase/decrease buttons ends */
 </style>

@@ -13,7 +13,9 @@ module.exports = {
         'light-gray': '#F7F7F9',
         'medium-gray': '#A4A8AB',
         'dark-gray': '#535353',
-        'action-icon-gray': '#E5E7EB'
+        'action-icon-gray': '#E5E7EB',
+        'brown': '#4F352F',
+        'light-gray-border': '#E5E5E7'
       },
       maxWidth: {
         'btn': '15rem',

@@ -12,7 +12,7 @@
       <!-- Bottom buttons section starts -->
       <div class="flex flex-col items-center justify-center w-full">
         <!-- Create an account button -->
-        <button class="w-full px-4 py-3 font-bold text-white transition-all border-2 border-transparent rounded-lg bg-red font-ubuntu hover:border-red hover:bg-transparent hover:text-red max-w-btn focus:outline-none"> Create an account! </button>
+        <router-link to="" tag="button" class="w-full px-4 py-3 font-bold text-white transition-all border-2 border-transparent rounded-lg bg-red font-ubuntu hover:border-red hover:bg-transparent hover:text-red max-w-btn focus:outline-none"> Create an account! </router-link>
         <!-- OR separator -->
         <span class="relative block my-4 text-xs font-normal text-center separator text-dark-gray font-ubuntu max-w-btn"> OR </span>
         <!-- Sign in button -->
