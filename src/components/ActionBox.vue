@@ -4,11 +4,11 @@
     :class="{ 'active-box': this.activeBox }"
   >
     <!-- Box icon wrapper starts -->
-    <span 
-      class="w-8 h-8 mb-4 bg-center bg-no-repeat rounded-full bg-1 bg-action-icon-gray action-icon" 
-      :style="{'backgroundImage': `url('${this.publicPath}${this.iconName}')`}"
+    <div 
+      class="w-8 h-8 mb-4 rounded-full bg-action-icon-gray action-icon-circle"
     >
-    </span>
+      <span class="block w-8 h-8 bg-center bg-no-repeat bg-1 bg-dark-gray action-icon" :style="{'mask-image': `url('${this.publicPath}${this.iconName}')`}"></span>
+    </div>
     <!-- Box icon wrapper ends -->
 
     <!-- Box title starts -->
@@ -49,6 +49,11 @@ export default {
 </script>
 
 <style scoped>
+  .action-icon {
+    mask-repeat: no-repeat;
+    mask-size: 1rem;
+    mask-position: center;
+  }
   /* Style for the active box starts */
   .active-box {
     background-color: #FDE2E6;
@@ -56,8 +61,11 @@ export default {
   .active-box .action-label {
     color: #FF244C;
   }
+  .active-box .action-icon-circle {
+    background: #FF244C;
+  }
   .active-box .action-icon {
-    background-color: #FF244C;
+    background-color: #FDE2E6;
   }
   /* Style for the active box ends */
 </style>
