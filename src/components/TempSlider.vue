@@ -27,26 +27,41 @@
 
       <!-- Inner circle wrapper starts -->
       <div class="absolute flex flex-col items-center justify-center w-40 h-40 m-auto text-3xl font-normal text-center rounded-full shadow-lg inner-circle font-ubuntu text-dark-gray"> 
+
         <div class="flex items-center justify-center"> 
-          <span class="inline-block temp-icon mr-2.5" :style="{'backgroundImage': `url('${this.publicPath}${this.tempIconName}.svg')`}"></span>
+          <!-- Warm/cold icon for the temperature setup ends-->
+          <span class="inline-block temp-icon mr-2.5 w-6 h-6 bg-contain bg-no-repeat bg-contain bg-center" :style="{'backgroundImage': `url('${this.publicPath}${this.tempIconName}.svg')`}"></span>
+          <!-- Warm/cold icon for the temperature setup ends -->
+
+          <!-- Temperature setup label starts -->
           <span> {{ this.temperatureValue }} &deg;C  </span>
+          <!-- Temperature setup label ends -->
         </div>
-        <span class="relative text-sm font-normal uppercase top-1 font-ubuntu text-medium-gray"> current {{ currentTemp }} &deg;C </span>
+        <!-- Current temperature info / below the temperature setup label starts -->
+        <span class="relative text-sm font-normal uppercase top-1 font-ubuntu text-medium-gray">
+          current {{ currentTemp }} &deg;C 
+        </span>
+        <!-- Current temperature info / below the temperature setup label starts -->
       </div>
       <!-- Inner circle wrapper ends -->
 
       <!-- Buttons wrapper starts -->
       <div class="absolute flex items-center justify-between w-full m-auto -bottom-1 max-w-inc-dec-btns">
+        <!-- Decrease button starts -->
         <button 
-          @click="decrease"
+          @click="decreaseTemp"
           :class="{'opacity-50 pointer-events-none' : this.disabledDecBtn }"
-          class="relative w-5 h-5 appearance-none btn-decrease focus:outline-none"
+          class="relative w-5 h-5 bg-center bg-no-repeat bg-contain appearance-none btn-decrease focus:outline-none"
         ></button>
+        <!-- Decrease button ends -->
+        
+        <!-- Increase button starts -->
         <button 
-          @click="increase"
+          @click="increaseTemp"
           :class="{'opacity-50 pointer-events-none' : this.disabledIncBtn }"
-          class="relative w-5 h-5 apperance-none btn-increase focus:outline-none"
+          class="relative w-5 h-5 bg-center bg-no-repeat bg-contain apperance-none btn-increase focus:outline-none"
         ></button>
+        <!-- Increase button ends -->
       </div>
       <!-- Buttons wrapper ends -->
     </div>
@@ -55,6 +70,7 @@
 </template>
 
 <script>
+// Importing components
 import RoundSlider from 'vue-round-slider'
 
 export default {
@@ -65,14 +81,17 @@ export default {
   },
 
   props: {
+    // Handles the templerature value of the slider
     tempValue: {
       type: Number,
       default: 20
     },
+    // Handles the current temperature label
     currentTemp: { 
       type: Number,
       default: 20
     },
+    // Handles the minimal temperature setup for the warm/cold icon
     minTemp: {
       type: Number,
       default: 18
@@ -89,6 +108,7 @@ export default {
   },
 
   computed: {
+    // Handles the icon based min minimal temperature prop
     tempIconName() {
       if (this.temperatureValue <= this.minTemp) {
         return 'cold'
@@ -99,7 +119,8 @@ export default {
   },
 
   methods: {
-    decrease () {
+    // Handles decreasing the temperature
+    decreaseTemp () {
       if (this.temperatureValue === 15) {
         this.disabledDecBtn = true
         } else {
@@ -108,8 +129,9 @@ export default {
         this.temperatureValue--
       }
     },
-
-    increase () {
+    
+    // Handles increasing the temperature
+    increaseTemp () {
       if (this.temperatureValue === 25) {
         this.disabledIncBtn = true
       } else {
@@ -133,17 +155,6 @@ export default {
   }
   /* Additional style for the slider ends */
 
-  /* Icons for the templerature starts */
-  .temp-icon {
-    width: 25px;
-    height: 25px;
-    /* background-image: url('../assets/cold.svg'); */
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  /* Icons for the templerature ends */
-
   /* Style for the inner circle of the slider starts */
   .inner-circle {
     background: linear-gradient(148.24deg, #F7F7F7 27.8%, #FBFBFB 82.39%);
@@ -153,15 +164,9 @@ export default {
   /* Style for the increase/decrease buttons starts */
   .btn-decrease {
     background-image: url('../assets/icon-decrease.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
   }
   .btn-increase {
     background-image: url('../assets/icon-increase.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
   }
   /* Style for the increase/decrease buttons ends */
 </style>
